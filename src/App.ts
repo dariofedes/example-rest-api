@@ -7,7 +7,7 @@ export default class App {
         this.router = router
     }
 
-    run(port: number = 8080) {
+    run() {
         this.router.get('/countries')
 
         this.router.listen()

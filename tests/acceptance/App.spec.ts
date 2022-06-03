@@ -1,7 +1,7 @@
 import { expect } from "chai"
 import axios from 'axios'
-import express from 'express'
 import App from '../../src/App'
+import ExpressRouter from '../../src/ExpressRouter'
 import countriesData from '../fixtures/countries-data'
 
 const PORT = 8080
@@ -9,9 +9,9 @@ const PORT = 8080
 describe('App', () => {
     it('should return countries data when requested to "/countries" endpoint', async () => {
         // Given
-        const expressApp = express()
+        const expressRouter = new ExpressRouter()
 
-        const app: App = new App(expressApp)
+        const app = new App(expressRouter)
         app.run()
         
         // When
