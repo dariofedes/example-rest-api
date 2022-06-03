@@ -7,7 +7,7 @@ import countriesData from '../fixtures/countries-data'
 const PORT = 8080
 
 describe('App', () => {
-    it('should return countries data when requested to "/countries" endpoint', () => {
+    it('should return countries data when requested to "/countries" endpoint', async () => {
         // Given
         const expressApp = express()
 
@@ -15,7 +15,7 @@ describe('App', () => {
         app.run()
         
         // When
-        const data = getDataFromRequest('/country')
+        const data = await getDataFromRequest('/country')
 
         // Then
         expect(data).to.be.equal(countriesData)
@@ -23,6 +23,6 @@ describe('App', () => {
 })
 
 async function getDataFromRequest(endpoint: string) {
-    const response = await axios.get(`localhost:${PORT}/${endpoint}`)
+    const response = await axios.get(`http://localhost:${PORT}/${endpoint}`)
     return response.data
 }
