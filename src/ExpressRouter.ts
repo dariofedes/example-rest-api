@@ -8,6 +8,11 @@ export default class ExpressRouter implements Router {
         this.router = express()
     }
 
+    
+    listen(): null {
+        throw new Error('Method not implemented.');
+    }
+
     get(endpoint: string): null {
         throw new Error('Method not implemented.');
     }

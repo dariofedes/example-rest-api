@@ -9,5 +9,7 @@ export default class App {
 
     run(port: number = 8080) {
         this.router.get('/countries')
+
+        this.router.listen()
     }
 }
