@@ -1,15 +1,15 @@
-import express from 'express'
 import sinon from 'sinon'
 import App from '../../src/App'
+import ExpressRouter from '../../src/ExpressRouter'
 
 describe.only('App', () => {
     it('should set a "/countries" get endpoint', () => {
         // Given
-        const expressApp = express()
+        const expressRouter = new ExpressRouter()
         const mockedGet = sinon.mock()
-        expressApp.get = mockedGet
+        expressRouter.get = mockedGet
         
-        const app: App = new App(expressApp)
+        const app: App = new App(expressRouter)
 
         // When
         app.run()

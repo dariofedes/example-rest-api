@@ -1,14 +1,13 @@
-import { Application as ExpressApplication } from 'express'
+import Router from './Router'
 
 export default class App {
-    router: ExpressApplication
+    router: Router
 
-    constructor(router: ExpressApplication) {
+    constructor(router: Router) {
         this.router = router
     }
 
     run(port: number = 8080) {
         this.router.get('/countries')
     }
-
 }
