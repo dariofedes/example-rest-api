@@ -2,7 +2,7 @@ import sinon from 'sinon'
 import App from '../../src/App'
 import ExpressRouter from '../../src/ExpressRouter'
 
-describe.only('App', () => {
+describe('App', () => {
     it('should set a "/countries" get endpoint', () => {
         // Given
         const expressRouter = new ExpressRouter()
