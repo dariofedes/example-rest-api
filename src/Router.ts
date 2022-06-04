@@ -1,5 +1,5 @@
 export default interface Router {
-    get(endpoint: string): void
+    get(pathName: string): void
 
     listen(): void
 }

@@ -3,9 +3,9 @@ import sinon from "sinon"
 import ExpressRouter from "../../src/ExpressRouter"
 
 describe('ExpressRouter', () => {
-    it('should set a get endpoint with the given endpoint name', () => {
+    it('should set a get endpoint with the given path', () => {
         //Given
-        const endpointName = 'endpointName'
+        const pathName = 'pathName'
 
         const expressApp = express()
         const mockedExpressGet = sinon.mock()
@@ -15,9 +15,9 @@ describe('ExpressRouter', () => {
         const expressRouter = new ExpressRouter(expressApp)
         
         // When
-        expressRouter.get(endpointName)
+        expressRouter.get(pathName)
 
         // Then
-        sinon.assert.calledWith(mockedExpressGet, `/${endpointName}`)
+        sinon.assert.calledWith(mockedExpressGet, `/${pathName}`)
     })
 })

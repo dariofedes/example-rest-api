@@ -13,7 +13,7 @@ export default class ExpressRouter implements Router {
         throw new Error('Method not implemented.');
     }
 
-    get(endpoint: string): void {
-        this.router.get(`/${endpoint}`)
+    get(pathName: string): void {
+        this.router.get(`/${pathName}`)
     }
 }
