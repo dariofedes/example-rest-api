@@ -1,8 +1,9 @@
 import { expect } from "chai"
+import express from 'express'
 import axios from 'axios'
 import RestAPI from '../../src/RestAPI'
 import ExpressRouter from '../../src/ExpressRouter'
-import express from 'express'
+import CountriesRoute from '../../src/CountriesRoute'
 import countriesData from '../fixtures/countries-data'
 
 const PORT = 8080
@@ -12,7 +13,7 @@ describe('RestAPI', () => {
         // Given
         const expressRouter = new ExpressRouter(express())
 
-        const countriesRoute = new CountryiesRoute()
+        const countriesRoute = new CountriesRoute()
         const routes = [ countriesRoute ]
 
         const restAPI = new RestAPI(expressRouter, routes)
