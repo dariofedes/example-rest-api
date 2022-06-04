@@ -1,4 +1,7 @@
-import express, { Application as ExpressApplication } from 'express'
+import {
+    Application as ExpressApplication,
+    Handler as ExpressHandler
+} from 'express'
 import Router from './Router'
 
 export default class ExpressRouter implements Router {
@@ -14,7 +17,7 @@ export default class ExpressRouter implements Router {
         this.router.listen(this.port)
     }
 
-    get(pathName: string): void {
-        this.router.get(`/${pathName}`)
+    get(path: string, callback: ExpressHandler): void {
+        this.router.get(path, callback)
     }
 }

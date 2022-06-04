@@ -20,7 +20,7 @@ describe('RestAPI', () => {
         restAPI.run()
         
         // When
-        const data = await getDataFromRequest('/country')
+        const data = await getDataFromRequest('countries?name=name&code=code&sort=asc')
 
         // Then
         expect(data).to.be.equal(countriesData)

@@ -1,5 +1,5 @@
 export default interface Router {
-    get(pathName: string): void
+    get(pathName: string, callback: Function): void
 
     listen(): void
 }

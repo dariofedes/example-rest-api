@@ -3,22 +3,22 @@ import sinon from "sinon"
 import ExpressRouter from "../../src/infrastructure/ExpressRouter"
 
 describe('ExpressRouter', () => {
-    it('should set a get endpoint with the given path', () => {
+    it('should set a get endpoint with the given path and callback', () => {
         //Given
-        const pathName = 'pathName'
+        const path = '/path'
+        const callback = () => null
 
         const expressApp = express()
         const mockedExpressGet = sinon.mock()
         expressApp.get = mockedExpressGet
 
-
         const expressRouter = new ExpressRouter(expressApp)
         
         // When
-        expressRouter.get(pathName)
+        expressRouter.get(path, callback)
 
         // Then
-        sinon.assert.calledWith(mockedExpressGet, `/${pathName}`)
+        sinon.assert.calledWithExactly(mockedExpressGet, path, callback)
     })
 
     it('should get up a web API listening in the given port', () => {
@@ -28,7 +28,6 @@ describe('ExpressRouter', () => {
         const expressApp = express()
         const mockedExpressListen = sinon.mock()
         expressApp.listen = mockedExpressListen
-
 
         const expressRouter = new ExpressRouter(expressApp, port)
         
@@ -44,7 +43,6 @@ describe('ExpressRouter', () => {
         const expressApp = express()
         const mockedExpressListen = sinon.mock()
         expressApp.listen = mockedExpressListen
-
 
         const expressRouter = new ExpressRouter(expressApp)
         
