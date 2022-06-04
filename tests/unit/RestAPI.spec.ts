@@ -1,8 +1,8 @@
 import sinon from 'sinon'
-import RestAPI from '../../src/RestAPI'
-import ExpressRouter from '../../src/ExpressRouter'
-import Route from '../../src/Route'
-import Router from '../../src/Router'
+import RestAPI from '../../src/infrastructure/RestAPI'
+import ExpressRouter from '../../src/infrastructure/ExpressRouter'
+import Route from '../../src/routes/Route'
+import Router from '../../src/infrastructure/Router'
 
 describe('RestAPI', () => {
     it('should register as endoints all passed routes', () => {

@@ -1,5 +1,5 @@
 import Router from './Router'
-import Route from './Route'
+import Route from '../routes/Route'
 
 export default class RestAPI {
     router: Router

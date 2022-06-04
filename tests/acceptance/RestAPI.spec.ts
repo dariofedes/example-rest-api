@@ -1,9 +1,9 @@
 import { expect } from "chai"
 import express from 'express'
 import axios from 'axios'
-import RestAPI from '../../src/RestAPI'
-import ExpressRouter from '../../src/ExpressRouter'
-import CountriesRoute from '../../src/CountriesRoute'
+import RestAPI from '../../src/infrastructure/RestAPI'
+import ExpressRouter from '../../src/infrastructure/ExpressRouter'
+import CountriesRoute from '../../src/routes/CountriesRoute'
 import countriesData from '../fixtures/countries-data'
 
 const PORT = 8080

@@ -1,5 +1,5 @@
 import Route from "./Route";
-import Router from "./Router";
+import Router from "../infrastructure/Router";
 
 export default class CountriesRoute implements Route {
     registerRoute(router: Router): void {

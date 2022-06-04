@@ -1,6 +1,6 @@
 import express from "express"
 import sinon from "sinon"
-import ExpressRouter from "../../src/ExpressRouter"
+import ExpressRouter from "../../src/infrastructure/ExpressRouter"
 
 describe('ExpressRouter', () => {
     it('should set a get endpoint with the given path', () => {
