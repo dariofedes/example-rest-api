@@ -1,16 +1,16 @@
 import sinon from 'sinon'
-import App from '../../src/App'
+import RestAPI from '../../src/RestAPI'
 import ExpressRouter from '../../src/ExpressRouter'
 
-describe('App', () => {
+describe('RestAPI', () => {
     it('should set a get endpoint called "countries"', () => {
         // Given
         const expressRouter = sinon.createStubInstance(ExpressRouter)
         
-        const app: App = new App(expressRouter)
+        const restAPI: RestAPI = new RestAPI(expressRouter)
 
         // When
-        app.run()
+        restAPI.run()
 
         // Then
         sinon.assert.calledWith(expressRouter.get, 'countries')
@@ -20,10 +20,10 @@ describe('App', () => {
          // Given
          const expressRouter = sinon.createStubInstance(ExpressRouter)
         
-         const app: App = new App(expressRouter)
+         const restAPI: RestAPI = new RestAPI(expressRouter)
  
          // When
-         app.run()
+         restAPI.run()
  
          // Then
          sinon.assert.calledOnce(expressRouter.listen)

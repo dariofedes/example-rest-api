@@ -1,19 +1,19 @@
 import { expect } from "chai"
 import axios from 'axios'
-import App from '../../src/App'
+import RestAPI from '../../src/RestAPI'
 import ExpressRouter from '../../src/ExpressRouter'
 import express from 'express'
 import countriesData from '../fixtures/countries-data'
 
 const PORT = 8080
 
-describe('App', () => {
+describe('RestAPI', () => {
     it('should return countries data when requested to "/countries" endpoint', async () => {
         // Given
         const expressRouter = new ExpressRouter(express())
 
-        const app = new App(expressRouter)
-        app.run()
+        const restAPI = new RestAPI(expressRouter)
+        restAPI.run()
         
         // When
         const data = await getDataFromRequest('/country')

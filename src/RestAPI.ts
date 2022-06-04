@@ -1,6 +1,6 @@
 import Router from './Router'
 
-export default class App {
+export default class RestAPI {
     router: Router
 
     constructor(router: Router) {

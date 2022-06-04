@@ -9,7 +9,6 @@ export default class ExpressRouter implements Router {
         this.router = router
         this.port = port
     }
-
     
     listen(): void {
         this.router.listen(this.port)
