@@ -8,7 +8,7 @@ export default class App {
     }
 
     run() {
-        this.router.get('/countries')
+        this.router.get('countries')
 
         this.router.listen()
     }

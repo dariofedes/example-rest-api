@@ -4,16 +4,16 @@ import Router from './Router'
 export default class ExpressRouter implements Router {
     router: ExpressApplication
 
-    constructor() {
-        this.router = express()
+    constructor(router: ExpressApplication) {
+        this.router = router
     }
 
     
-    listen(): null {
+    listen(): void {
         throw new Error('Method not implemented.');
     }
 
-    get(endpoint: string): null {
-        throw new Error('Method not implemented.');
+    get(endpoint: string): void {
+        this.router.get(`/${endpoint}`)
     }
 }

@@ -3,7 +3,7 @@ import App from '../../src/App'
 import ExpressRouter from '../../src/ExpressRouter'
 
 describe('App', () => {
-    it('should set a "/countries" get endpoint', () => {
+    it('should set a get endpoint called "countries"', () => {
         // Given
         const expressRouter = sinon.createStubInstance(ExpressRouter)
         
@@ -13,7 +13,7 @@ describe('App', () => {
         app.run()
 
         // Then
-        sinon.assert.calledWith(expressRouter.get, '/countries')
+        sinon.assert.calledWith(expressRouter.get, 'countries')
     })
 
     it('should get up a web API', () => {
