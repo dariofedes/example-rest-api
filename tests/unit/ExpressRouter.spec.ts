@@ -12,7 +12,7 @@ describe('ExpressRouter', () => {
         expressApp.get = mockedExpressGet
 
 
-        const expressRouter = new ExpressRouter(expressApp, 8080)
+        const expressRouter = new ExpressRouter(expressApp)
         
         // When
         expressRouter.get(pathName)
@@ -37,5 +37,21 @@ describe('ExpressRouter', () => {
 
         // Then
         sinon.assert.calledWith(mockedExpressListen, port)
+    })
+
+    it('shuould get up a web API listening on port 8080 by default', () => {
+        //Given
+        const expressApp = express()
+        const mockedExpressListen = sinon.mock()
+        expressApp.listen = mockedExpressListen
+
+
+        const expressRouter = new ExpressRouter(expressApp)
+        
+        // When
+        expressRouter.listen()
+
+        // Then
+        sinon.assert.calledWith(mockedExpressListen, 8080)
     })
 })
