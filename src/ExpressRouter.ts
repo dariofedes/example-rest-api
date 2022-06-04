@@ -3,14 +3,16 @@ import Router from './Router'
 
 export default class ExpressRouter implements Router {
     router: ExpressApplication
+    port: number
 
-    constructor(router: ExpressApplication) {
+    constructor(router: ExpressApplication, port: number) {
         this.router = router
+        this.port = port
     }
 
     
     listen(): void {
-        throw new Error('Method not implemented.');
+        this.router.listen(this.port)
     }
 
     get(pathName: string): void {
