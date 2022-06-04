@@ -1,15 +1,17 @@
 import Router from './Router'
+import Route from './Route'
 
 export default class RestAPI {
     router: Router
-
-    constructor(router: Router) {
+    routes?: Route[]
+    
+    constructor(router: Router, routes?: Route[]) {
         this.router = router
+        this.routes = routes
     }
 
     run() {
-        this.router.get('countries')
-
+        this.routes?.forEach(route => route.registerRoute(this.router))
         this.router.listen()
     }
 }

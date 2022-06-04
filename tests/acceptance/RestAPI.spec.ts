@@ -12,7 +12,10 @@ describe('RestAPI', () => {
         // Given
         const expressRouter = new ExpressRouter(express())
 
-        const restAPI = new RestAPI(expressRouter)
+        const countriesRoute = new CountryiesRoute()
+        const routes = [ countriesRoute ]
+
+        const restAPI = new RestAPI(expressRouter, routes)
         restAPI.run()
         
         // When
